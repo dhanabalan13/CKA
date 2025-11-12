@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: synergy-leverager
+  labels:
+    app: synergy-leverager
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: synergy-leverager
+  template:
+    metadata:
+      labels:
+        app: synergy-leverager
+    spec:
+      containers:
+        - name: synergy-leverager
+          image: alpine:latest
+          command: ['/bin/sh', '-c', 'while true; do echo "logging" >> /var/log/synergy-leverager.log; sleep 1; done']
+          volumeMounts:
+            - name: data
+              mountPath: /var/log  
+      volumes:
+        - name: data
+          emptyDir: {}
