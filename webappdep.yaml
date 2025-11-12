@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webapp
+  namespace: webapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: webapp
+  template:
+    metadata:
+      labels:
+        app: webapp
+    spec:
+      volumes:
+        - name: config-vol
+          configMap:
+            name: nginx-config
+        - name: tls-vol
+          secret:
+            secretName: web-tls
+      containers:
+        - name: nginx
+          image: nginx:1.25
+          ports:
+            - containerPort: 443
+          volumeMounts:
+            - name: config-vol
+              mountPath: /etc/nginx/conf.d
+            - name: tls-vol
+              mountPath: /etc/nginx/tls
+
