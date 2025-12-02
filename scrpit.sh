@@ -30,8 +30,6 @@ kubectl apply -f http://raw.githubusercontent.com/dhanabalan13/CKA/refs/heads/ma
 kubectl apply -f https://github.com/kubernetes-sigs/gateway-api/releases/download/v1.1.0/standard-install.yaml
 kubectl apply -f https://raw.githubusercontent.com/nginxinc/nginx-gateway-fabric/v1.6.2/deploy/crds.yaml
 kubectl apply -f https://raw.githubusercontent.com/nginxinc/nginx-gateway-fabric/v1.6.2/deploy/default/deploy.yaml
-
-#Q9
 kubectl apply -f https://raw.githubusercontent.com/dhanabalan13/CKA/refs/heads/main/gatewayclass.yaml
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.10.1/deploy/static/provider/cloud/deploy.yaml
 echo "127.0.0.1 gateway.web.k8s.local" | sudo tee -a /etc/hosts 
