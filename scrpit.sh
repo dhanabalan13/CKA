@@ -32,7 +32,7 @@ kubectl apply -f https://raw.githubusercontent.com/nginxinc/nginx-gateway-fabric
 kubectl apply -f https://raw.githubusercontent.com/nginxinc/nginx-gateway-fabric/v1.6.2/deploy/default/deploy.yaml
 kubectl apply -f https://raw.githubusercontent.com/dhanabalan13/CKA/refs/heads/main/gatewayclass.yaml
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.10.1/deploy/static/provider/cloud/deploy.yaml
-echo "127.0.0.1 gateway.web.k8s.local" | sudo tee -a /etc/hosts 
+echo "127.0.0.1 gateway.web.k8s.local" | sudo tee -a /etc/hosts
 kubectl apply -f https://raw.githubusercontent.com/dhanabalan13/CKA/refs/heads/main/ingress.yaml
 kubectl apply -f https://raw.githubusercontent.com/dhanabalan13/CKA/refs/heads/main/webapp.yaml
 openssl req -x509 -nodes -days 365 -newkey rsa:2048 \
