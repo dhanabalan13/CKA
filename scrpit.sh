@@ -73,5 +73,8 @@ kubectl create namespace sound-repeater
 kubectl apply -f https://raw.githubusercontent.com/dhanabalan13/CKA/refs/heads/main/echo-server.yaml
 kubectl apply -f https://raw.githubusercontent.com/dhanabalan13/CKA/refs/heads/main/echo-svc.yaml
 
+#Q22
+sed -i 's|--etcd-servers=https://127.0.0.1:2379|--etcd-servers=https://8.8.8.8|g' /etc/kubernetes/manifests/kube-apiserver.yaml
+
 
 
